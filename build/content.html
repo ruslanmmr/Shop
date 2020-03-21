@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Магазин</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+  </head>
+  <body>
+    <!--preloader-->
+    <style type="text/css">
+      .preloader {
+        background-color:#fff;
+        position:fixed;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        z-index:1000;
+        display:-webkit-box;
+        display:-webkit-flex;
+        display:-ms-flexbox;
+        display:flex;
+      }
+      .preloader__item span {
+        display: block;
+        position: absolute;
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 50%;
+        animation: animation 1.2s cubic-bezier(0,0.2,0.8,1) infinite;
+      }
+      .preloader__item span:nth-child(1) {
+        border-color: #df6c26;
+      }
+      .preloader__item span:nth-child(2) {
+        border-color: #df6c26;
+        animation-delay: -0.6s;
+      }
+      .preloader__content {
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        opacity: 0;
+        animation: fade 0.5s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+      .preloader__item {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform: translateZ(0) scale(1);
+        backface-visibility: hidden;
+        transform-origin: 0 0;
+      }
+      .preloader__item span { 
+        box-sizing: border-box; 
+      }
+      @keyframes fade {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes animation {
+        0% {
+          top: 50px;
+          left: 50px;
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+          100% {
+          top: 0px;
+          left: 0px;
+          width: 100px;
+          height: 100px;
+          opacity: 0;
+        }
+      }
+    </style>
+    <div class="preloader">
+      <div class="preloader__content">
+        <div class="preloader__item"><span></span><span></span></div>
+      </div>
+    </div>
+    <!--wrapper-->
+    <div class="page-wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="logo header__logo"><a class="logo__link" href="/"><img src="http://placehold.it/250x60" alt="logo"></a></div>
+          <div class="header__nav">
+            <nav class="desktop-nav">
+              <ul class="desktop-nav__list">
+                                <li class="desktop-nav__item"><a class="desktop-nav__link link" href="#">о нас</a></li>
+                                <li class="desktop-nav__item"><a class="desktop-nav__link link" href="#">mybarbershop</a></li>
+                                <li class="desktop-nav__item"><a class="desktop-nav__link link" href="#">новости</a></li>
+                                <li class="desktop-nav__item"><a class="desktop-nav__link link" href="#">доставка и оплата</a></li>
+                                <li class="desktop-nav__item"><a class="desktop-nav__link link" href="#">контакты</a></li>
+              </ul>
+            </nav>
+            <form class="search" action="#"> 
+              <input class="input search__input" type="text" placeholder="введите название или артикул товара">
+              <button class="button search__button"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+          <div class="header__info">
+            <div class="header__info-left"><a class="header__info-phone" href="tel:74950232424">+7 495 023 24 24</a><span class="header__info-txt">с 10 до 19 / Пн - Пт</span></div>
+            <div class="header__info-right"><a class="button button_style-1 header__auth" href="#auth" data-fancybox data-touch="false"><i class="fas fa-user"></i><span>Вход</span></a>
+              <!-- или-->
+              <!--<a class="button button_style-1 header__auth" href="profile.html"><i class="fas fa-user"></i><span>Вася Пупкин</span></a>--><a class="button button_style-1" href="cart.html"><i class="fas fa-shopping-basket"></i><span>Корзина</span><span class="count">5</span></a><a class="button nav-toggle" href="javascript:void(0);"><i class="fas fa-bars"></i></a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--catalogue-nav-->
+      <nav class="nav">
+        <div class="container">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link nav__catalogue-trigger" href="javascript:void(0);">каталог</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">волосы</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">борода и усы</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">лицо и тело</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">атрибутика</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">Акции</a></li>
+          </ul>
+          <div class="ctlg-nav">
+            <div class="container">
+              <!--main item-->
+              <div class="ctlg-nav-m">
+                <ul class="ctlg-nav-m__list">
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link" href="#">Категория 1</a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container scroll-type-2 shadow shadow_style2">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link" href="#">Категория 2</a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container scroll-type-2 shadow shadow_style2">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link" href="#">Категория 3</a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container scroll-type-2 shadow shadow_style2">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link" href="#">Категория 5</a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container scroll-type-2 shadow shadow_style2">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link" href="#">Категория 6</a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container scroll-type-2 shadow shadow_style2">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link" href="#">Подкатегория</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--overlay-->
+      <div class="overlay"></div>
+      <!--mobile-nav-->
+      <nav class="mobile-nav">
+        <div class="mobile-nav__head">
+          <form class="search" action="#"> 
+            <input class="input search__input" type="text" placeholder="Поиск">
+            <button class="button search__button"><i class="fas fa-search"></i></button>
+          </form><a class="button nav-toggle" href="javascript:void(0);"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="mobile-nav__content scroll-container">
+          <div class="scroll-child">
+            <div class="mobile-nav__section"><a class="button button_style-1" href="#auth" data-fancybox data-touch="false"><i class="fas fa-user"></i><span>Вход / Регистрация</span></a>
+              <!--<a class="button button_style-1" href="profile.html"><i class="fas fa-user"></i><span>Вася Пупкин</span><i class="fas fa-chevron-right"></i></a>-->
+            </div>
+            <div class="mobile-nav__section"><a class="button button_style-1" href="cart.html"><i class="fas fa-shopping-basket"></i><span>Корзина</span><span class="count">5</span></a></div>
+            <div class="mobile-nav__section toggle-group"><a class="button button_style-1 toggle-button" href="javascript:void(0)" data-show-text="Каталог товаров" data-hide-text="Скрыть каталог"><i class="fas fa-list"></i><span>Каталог товаров</span></a>
+              <ul class="toggle-content">
+                <li><a class="link" href="#">Категория 1</a></li>
+                <li><a class="link" href="#">Категория 2</a></li>
+                <li><a class="link" href="#">Категория 3</a></li>
+                <li><a class="link" href="#">Категория 4</a></li>
+                <li><a class="link" href="#">Категория 5</a></li>
+                <li><a class="link" href="#">Категория 6</a></li>
+              </ul>
+            </div>
+            <div class="mobile-nav__section"><a class="button button_style-1" href="#">Волосы</a><a class="button button_style-1" href="#">Борода и усы</a><a class="button button_style-1" href="#">Лицо и тело</a><a class="button button_style-1" href="#">Атрибутика</a><a class="button button_style-1" href="#">Акции</a></div>
+            <div class="mobile-nav__section"><a class="button button_style-1" href="#">О нас</a><a class="button button_style-1" href="#">Mybarbershop</a><a class="button button_style-1" href="#">Новости</a><a class="button button_style-1" href="#">Доставка и оплата</a><a class="button button_style-1" href="#">Контакты</a></div>
+            <div class="mobile-nav__section"><a class="button button_style-1" href="tel:"><i class="fas fa-phone"></i><span>+7 495 023 24 24</span></a></div>
+          </div>
+        </div>
+      </nav>
+      <div class="page-container">
+        <!--cards-->
+        <div class="breadcrumbs">
+          <div class="container">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item"><a class="link breadcrumbs__link" href="#">Главная</a></li>
+              <li class="breadcrumbs__item"><a class="link breadcrumbs__link" href="#">Каталог</a></li>
+              <li class="breadcrumbs__item">Товар</li>
+            </ul>
+          </div>
+        </div>
+        <main class="main">
+          <section class="section">
+            <div class="container">
+              <div class="section-head">
+                <h1 class="section__title">Секция 1</h1>
+              </div>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              <h3>Заголовок 2</h3>
+              <ul class="list">
+                <li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem!</li>
+                <li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</li>
+                <li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem!</li>
+              </ul>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+          </section>
+          <section class="section">
+            <div class="container">
+              <div class="section-head left">
+                <h2 class="section__title">Секция 2</h2>
+              </div>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+              <h3>Заголовок 3</h3>
+              <ol class="list">
+                <li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem!</li>
+                <li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</li>
+                <li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem!</li>
+              </ol>
+              <h4>Заголовок 4</h4>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              <h5>Заголовок 5</h5>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              <h5>Заголовок 6</h5>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+          </section>
+        </main>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__container row mb--30">
+            <div class="footer__background contain"><img class="lazy" data-src="img/logos/logo.svg" alt="bg"></div>
+            <div class="footer-nav mb-30 col-xl-auto order-2">
+              <div class="row justify-center mb--30">
+                <ul class="footer-nav__list mb-30 col-xl-auto">
+                  <li class="footer-nav__item"><a class="link link_bordered footer-nav__link" href="#">О компании</a></li>
+                  <li class="footer-nav__item"><a class="link link_bordered footer-nav__link" href="#">Бренды</a></li>
+                  <li class="footer-nav__item"><a class="link link_bordered footer-nav__link" href="#">Контакты</a></li>
+                  <li class="footer-nav__item"><a class="link link_bordered footer-nav__link" href="#">Публичная оферта</a></li>
+                </ul>
+                <ul class="footer-nav__list mb-30 col-xl-auto">
+                  <li class="footer-nav__item"><a class="link link_bordered footer-nav__link" href="#">Оплата</a></li>
+                  <li class="footer-nav__item"><a class="link link_bordered footer-nav__link" href="#">Доставка</a></li>
+                  <li class="footer-nav__item"><a class="link link_bordered footer-nav__link" href="#">Возврат</a></li>
+                  <li class="footer-nav__item"><a class="link link_bordered footer-nav__link" href="#">Адрес самовывоза</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__center mb-30 col-xl col-md-12 order-md-4">
+              <div class="footer__top-section">
+                <div class="socials">
+                  <ul class="socials__list row compact">
+                    <li class="socials__item col-xl-auto mb-15"><a class="socials__link" href="#"><i class="fab fa-vk"></i></a></li>
+                    <li class="socials__item col-xl-auto mb-15"> <a class="socials__link" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="socials__item col-xl-auto mb-15"> <a class="socials__link" href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li class="socials__item col-xl-auto mb-15"> <a class="socials__link" href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li class="socials__item col-xl-auto mb-15"> <a class="socials__link" href="#"><i class="fab fa-odnoklassniki"></i></a></li>
+                  </ul>
+                </div><img class="footer__pay-img" src="img/payment.png" alt="payment">
+              </div><span class="footer__message">Увидели ошибку - сообщите нам нажав Ctrl+Enter</span>
+            </div>
+            <div class="footer__contacts mb-30 col-xl-auto order-1">
+              <div class="footer__top-section">
+                <div class="logo footer__logo"><a class="logo__link" href="#"><img src="http://placehold.it/250x60" alt="logo"></a></div><a class="link footer__phone" href="tel:74950232424">+7 495 023 24 24</a>
+              </div><span class="footer__info-txt">с 10.00 до 19.00 / Пн - Пт</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--popups-->
+      <div class="popup" id="auth">
+        <h5 class="popup__title mb-20">Войти в личный кабинет</h5>
+        <form class="form mb-20" action="#">
+          <div class="form__item mb-20">
+            <input class="input input_style-1" type="text" placeholder="Логин">
+          </div>
+          <div class="form__item mb-20">
+            <input class="input input_style-1" type="password" placeholder="Пароль"><a class="pass-toggle" href="javascript:void(0);"><i class="fas fa-eye-slash"></i><i class="fas fa-eye"></i></a>
+          </div>
+          <div class="form__item row align-center">
+            <div class="col-xl-auto"><a class="link" href="#">Забыли пароль?</a></div>
+            <div class="col-xl">
+              <button class="button button_style-2">Войти</button>
+            </div>
+          </div>
+        </form>
+        <div class="mb-20"><span class="display-block text-center mb-10">или войти с помощью</span>
+          <div class="row compact justify-center mb--10">
+            <div class="col-xl-auto mb-10"><a class="button button_style-2" href="#"><i class="fab fa-vk"></i></a></div>
+            <div class="col-xl-auto mb-10"><a class="button button_style-2" href="#"><i class="fab fa-facebook-f"></i></a></div>
+            <div class="col-xl-auto mb-10"><a class="button button_style-2" href="#"><i class="fab fa-twitter"></i></a></div>
+            <div class="col-xl-auto mb-10"><a class="button button_style-2" href="#"><i class="fab fa-odnoklassniki"></i></a></div>
+            <div class="col-xl-auto mb-10"><a class="button button_style-2" href="#"><i class="fab fa-google"></i></a></div>
+            <div class="col-xl-auto mb-10"><a class="button button_style-2" href="#"><i class="fab fa-yandex"></i></a></div>
+          </div>
+        </div>
+        <div class="text-center"><a class="link" href="#registration" data-fancybox data-touch="false">Зарегистрироваться</a></div>
+      </div>
+      <div class="popup" id="registration">
+        <h5 class="popup__title mb-20">Регистрация</h5>
+        <form class="form mb-20" action="#">
+          <div class="form__item mb-20">
+            <input class="input input_style-1" type="text" placeholder="Логин/Телефон/Email">
+          </div>
+          <div class="form__item mb-20">
+            <input class="input input_style-1" type="password" placeholder="Пароль">
+          </div>
+          <div class="form__item mb-20">
+            <input class="input input_style-1" type="password" placeholder="Пароль еще раз">
+          </div>
+          <div class="form__item mb-20">
+            <label class="checkbox">
+              <input type="checkbox" value="check"><i class="fas fa-check"></i>Я соглашаюсь с <a class="link link_bordered" href="#">правилами сайта</a>.
+            </label>
+          </div>
+          <div class="form__item">
+            <button class="button button_style-2">Зарегистрироваться</button>
+          </div>
+        </form>
+        <div class="text-center"><a class="link" href="#auth" data-fancybox data-touch="false">Войти</a></div>
+      </div>
+    </div>
+    <!--styles-->
+    <link rel="stylesheet" href="styles/common.min.css">
+    <!--scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/common.min.js"></script>
+  </body>
+</html>

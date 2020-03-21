@@ -1,0 +1,21 @@
+//Пожалуйста пропиши в этом случае всегда видимыми кнопки назад/вперед, 
+  мы не можем скрыть их для этого дизайна, я прописал вместо этого disabled класы
+.pagination
+  ul.pagination__list
+    li.pagination__item
+      a(href="#").pagination__link.pagination__link_arrow.disabled 
+        i.fas.fa-chevron-left
+    li.pagination__item
+      a(href="#").pagination__link 1
+    li.pagination__item
+      a(href="#").pagination__link.active 2
+    li.pagination__item
+      a(href="#").pagination__link 3
+    li.pagination__item
+      a(href="#").pagination__link ...
+    li.pagination__item
+      a(href="#").pagination__link 20
+    li.pagination__item
+      a(href="#").pagination__link.pagination__link_arrow
+        i.fas.fa-chevron-right
+    

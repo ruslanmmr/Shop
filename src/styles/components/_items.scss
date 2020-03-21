@@ -1,0 +1,145 @@
+.cover, .contain {
+  display: block;
+  position: relative;
+  img {
+    visibility: hidden;
+    opacity: 0;
+    transition: $trs3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    &.loaded {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.cover {
+  background: rgba(0,0,0,0.1);
+  overflow: hidden;
+  img {
+    object-fit: cover;
+  }
+}
+.contain {
+  img {
+    object-fit: contain;
+  }
+}
+
+.scroll-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  &.shadow {
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 15px;
+      width: 100%;
+      left: 0;
+      z-index: 2;
+    }
+    &:before {
+      top: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 2%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.7) 51%, rgba(255,255,255,0.5) 76%, rgba(255,255,255,0) 100%);
+    }
+    &:after {
+      bottom: 0;
+      background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 2%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.7) 51%, rgba(255,255,255,0.5) 76%, rgba(255,255,255,0) 100%);
+    }
+    &_style2 {
+      &:before {
+        background: linear-gradient(to bottom, rgba(126, 128, 132,1) 0%, rgba(126, 128, 132,1) 2%, rgba(126, 128, 132,0.9) 25%, rgba(126, 128, 132,0.7) 51%, rgba(126, 128, 132,0.5) 76%, rgba(126, 128, 132,0) 100%);
+      }
+      &:after {
+        background: linear-gradient(to top, rgba(126, 128, 132,1) 0%, rgba(126, 128, 132,1) 2%, rgba(126, 128, 132,0.9) 25%, rgba(126, 128, 132,0.7) 51%, rgba(126, 128, 132,0.5) 76%, rgba(126, 128, 132,0) 100%);
+      }
+    }
+  }
+  .scroll-content {
+    position: relative;
+    z-index: 1;
+  }
+  .scroll-child {
+    overflow: hidden;
+  }
+  .scrollbar-track-x {
+    display: none !important;
+  }
+  .scrollbar-track-y {
+    width: 10px;
+    height: 100%;
+    z-index: 3;
+    background-color: transparent;
+    &:after {
+      content: '';
+      display: block;
+      height: calc(100% - 30px);
+      width: 5px;
+      margin: 15px auto 15px auto;
+      border-radius: 5px;
+      background-color: $colorI;
+      position: relative;
+      z-index: 1;
+    }
+  }
+  .scrollbar-thumb {
+    z-index: 2;
+    top: 0;
+    right: auto;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    &:after {
+      content: '';
+      display: block;
+      height: calc(100% - 30px);
+      width: 5px;
+      margin: 15px auto 15px auto;
+      border-radius: 5px;
+      background-color: $colorA;
+      position: relative;
+      z-index: 1;
+    }
+  }
+  &.scroll-type-2 {
+    .scrollbar-track-y {
+      width: 5px;
+      &:after {
+        height: 100%;
+        width: 5px;
+        margin: 0;
+        border-radius: 0;
+        background-color: transparent !important;
+      }
+      .scrollbar-thumb {
+        &:after {
+          height: 100%;
+          width: 5px;
+          margin: 0;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+.display-block {
+  display: block;
+}
+.text-center {
+  text-align: center;
+}
+.text-color-a {
+  color: $colorA;
+}
+.text-color-b {
+  color: $colorH;
+}

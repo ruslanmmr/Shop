@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700,900&display=swap&subset=cyrillic');
+
+@import "../fontawesome-free-5.12.1-web/scss/fontawesome.scss";
+$fa-font-path: '../fontawesome-free-5.12.1-web/webfonts/';
+@import "../fontawesome-free-5.12.1-web/scss/brands.scss";
+@import "../fontawesome-free-5.12.1-web/scss/regular.scss";
+@import "../fontawesome-free-5.12.1-web/scss/solid.scss";
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
+	@font-face {
+		font-family: $font-family;
+		font-weight: $weight;
+		font-style: $style;
+		src: url('#{$file-path}.woff2') format('woff2'),
+				url('#{$file-path}.woff') format("woff");
+		
+	}
+}
+@include font-face("Geometria", "../fonts/Geometria-Light", 300);

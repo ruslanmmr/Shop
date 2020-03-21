@@ -1,0 +1,63 @@
+.popup#auth
+  h5.popup__title.mb-20 Войти в личный кабинет
+  form(action="#").form.mb-20
+    .form__item.mb-20
+      input(type="text" placeholder="Логин").input.input_style-1
+    .form__item.mb-20
+      input(type="password" placeholder="Пароль").input.input_style-1
+      a(href="javascript:void(0);").pass-toggle
+        i.fas.fa-eye-slash
+        i.fas.fa-eye
+    .form__item.row.align-center
+      .col-xl-auto
+        a(href="#").link Забыли пароль?
+      .col-xl
+        button.button.button_style-2 Войти
+  .mb-20
+    span.display-block.text-center.mb-10 или войти с помощью
+    .row.compact.justify-center.mb--10
+      .col-xl-auto.mb-10
+        a(href="#").button.button_style-2
+          i.fab.fa-vk
+      .col-xl-auto.mb-10
+        a(href="#").button.button_style-2
+          i.fab.fa-facebook-f
+      .col-xl-auto.mb-10
+        a(href="#").button.button_style-2
+          i.fab.fa-twitter
+      .col-xl-auto.mb-10
+        a(href="#").button.button_style-2
+          i.fab.fa-odnoklassniki
+      .col-xl-auto.mb-10
+        a(href="#").button.button_style-2
+          i.fab.fa-google
+      .col-xl-auto.mb-10
+        a(href="#").button.button_style-2
+          i.fab.fa-yandex
+  .text-center
+    a(href="#registration" data-fancybox data-touch='false').link
+      | Зарегистрироваться
+
+.popup#registration
+  h5.popup__title.mb-20 Регистрация
+  form(action="#").form.mb-20
+    .form__item.mb-20
+      input(type="text" placeholder="Логин/Телефон/Email").input.input_style-1
+    .form__item.mb-20
+      input(type="password" placeholder="Пароль").input.input_style-1
+    .form__item.mb-20
+      input(type="password" placeholder="Пароль еще раз").input.input_style-1
+    .form__item.mb-20
+      label.checkbox
+        input(type="checkbox" value="check")
+        i.fas.fa-check
+        | Я соглашаюсь с 
+        a(href="#").link.link_bordered правилами сайта
+        |.
+        
+    .form__item
+      button.button.button_style-2 Зарегистрироваться
+  .text-center
+    a(href="#auth" data-fancybox data-touch='false').link
+      | Войти
+  

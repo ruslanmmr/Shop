@@ -1,0 +1,102 @@
+extends layout/layout
+block content
+  //cards
+  include blocks/cards
+  main.main
+    include blocks/banner
+    section.section
+      .container
+        .section-head
+          h2.section__title НОВИнки
+        .slider.slider_default.arrows.catalogue-slider
+          .catalogue-slider__slide
+            +card-1()
+          .catalogue-slider__slide
+            +card-2()
+          .catalogue-slider__slide
+            +card-1()
+          .catalogue-slider__slide
+            +card-2()
+          .catalogue-slider__slide
+            +card-1()
+          .catalogue-slider__slide
+            +card-2()
+          .catalogue-slider__slide
+            +card-1()
+          .catalogue-slider__slide
+            +card-2()
+    section.section
+      .container
+        .section-head
+          h2.section__title лидеры продаж
+        .row.mb--30
+          .col-xl-3.col-md-4.col-sm-6.col-12.mb-30
+            +card-3()
+          .col-xl-3.col-md-4.col-sm-6.col-12.mb-30
+            +card-4()
+          .col-xl-3.col-md-4.col-sm-6.col-12.mb-30
+            +card-3()
+          .col-xl-3.col-md-4.col-sm-6.col-12.mb-30
+            +card-4()
+          .col-xl-3.col-md-4.col-sm-6.col-12.mb-30
+            +card-3()
+          .col-xl-3.col-md-4.col-sm-6.col-12.mb-30
+            +card-4()
+          .col-xl-3.col-md-4.col-sm-6.col-12.mb-30
+            +card-3()
+          .col-xl-3.col-md-4.col-sm-6.col-12.mb-30
+            +card-4()
+    section.section
+      .container
+        .section-head
+          h2.section__title Популярные категории
+        .row.mb--30
+          .col-xl-4.col-sm-6.col-12.mb-30
+            +card-5('Подарки','img/image5.jpg')
+          .col-xl-4.col-sm-6.col-12.mb-30
+            +card-5('Чехлы','img/image6.jpg')
+          .col-xl-4.col-sm-6.col-12.mb-30
+            +card-5('Ножницы','img/image7.jpg')
+          .col-xl-4.col-sm-6.col-12.mb-30
+            +card-5('Наборы','img/image8.jpg')
+          .col-xl-4.col-sm-6.col-12.mb-30
+            +card-5('Кресла','img/image9.jpg')
+          .col-xl-4.col-sm-6.col-12.mb-30
+            +card-5('Бритва','img/image9.jpg')
+    section.section.about
+      .container
+        .section-head
+          h2.section__title о магазине
+        .row.mb--30
+          .col-xl-3.col-sm-6.col-12.mb-30
+            .about__image.cover
+              img.lazy.lazy-image(data-src='img/image4.jpg' alt='image')
+          .col-xl-6.col-sm-12.order-sm-3.order-2.mb-30
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          .col-xl-3.col-sm-6.order-sm-2.order-3.col-12.mb-30
+            .about__image.cover
+              img.lazy.lazy-image(data-src='img/image4.jpg' alt='image')
+    section.section.about
+      .container
+        .section-head
+          h2.section__title бренды
+        .slider.slider_default.arrows.brands-slider
+          mixin brand(href)
+            .brands-slider__slide
+              .contain
+                img.lazy.lazy-image(data-src=href alt='image')
+          +brand('img/brand1.jpg')
+          +brand('img/brand2.jpg')
+          +brand('img/brand1.jpg')
+          +brand('img/brand2.jpg')
+          +brand('img/brand1.jpg')
+          +brand('img/brand2.jpg')
+          +brand('img/brand1.jpg')
+          +brand('img/brand2.jpg')
+          +brand('img/brand1.jpg')
+
+            
+
+        

@@ -1,0 +1,60 @@
+nav.nav
+  .container
+    ul.nav__list
+      li.nav__item
+        a(href="javascript:void(0);").nav__link.nav__catalogue-trigger каталог
+      li.nav__item
+        a(href="#").nav__link волосы
+      li.nav__item
+        a(href="#").nav__link борода и усы
+      li.nav__item
+        a(href="#").nav__link лицо и тело
+      li.nav__item
+        a(href="#").nav__link атрибутика
+      li.nav__item
+        a(href="#").nav__link Акции
+    .ctlg-nav
+      .container
+        mixin itemSmall(title)
+          li.ctlg-nav-s__item
+            a(href="#").ctlg-nav-s__link=title
+        //main item
+        mixin item(title)
+          .ctlg-nav-m__item
+            a(href="#").ctlg-nav-m__link=title
+            .ctlg-nav-s
+              .scroll-container.scroll-type-2.shadow.shadow_style2
+                .scroll-child
+                  ul.ctlg-nav-s__list
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+        mixin item2(title)
+          .ctlg-nav-m__item
+            a(href="#").ctlg-nav-m__link=title
+            .ctlg-nav-s
+              .scroll-container.scroll-type-2.shadow.shadow_style2
+                .scroll-child
+                  ul.ctlg-nav-s__list
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+                    +itemSmall('Подкатегория')
+        .ctlg-nav-m
+          ul.ctlg-nav-m__list
+            +item2('Категория 1')
+            +item('Категория 2')
+            +item2('Категория 3')
+            +item('Категория 5')
+            +item2('Категория 6')

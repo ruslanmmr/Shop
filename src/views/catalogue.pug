@@ -1,0 +1,99 @@
+extends layout/layout
+block content
+  //cards
+  include blocks/cards
+  include blocks/breadcrumbs
+  section.section.catalogue
+    .container
+      .row
+        include blocks/aside
+        main.main.col-xl.col-sm-12
+          .section-head.left
+            h1.section__title Товар
+          //ссылки каталога
+          .catalogue__links.toggle-group
+            a(href="javascript:void(0);" data-show-text='Подкатегории' data-hide-text='Скрыть').button.button_style-3.toggle-button  
+              span Подкатегории
+              i.fas.fa-th
+            .toggle-content
+              .row.compact.mb--15
+                .col-xl-auto
+                  a(href="#").button.button_style-3.mb-15 Подкатегория 1 
+                .col-xl-auto
+                  a(href="#").button.button_style-3.mb-15 Подкатегория 2
+                .col-xl-auto
+                  a(href="#").button.button_style-3.mb-15 Подкатегория 3
+                .col-xl-auto
+                  a(href="#").button.button_style-3.mb-15 Подкатегория 4
+                .col-xl-auto 
+                  a(href="#").button.button_style-3.mb-15 Подкатегория 5
+                .col-xl-auto
+                  a(href="#").button.button_style-3.mb-15 Подкатегория 6
+                .col-xl-auto
+                  a(href="#").button.button_style-3.mb-15 Подкатегория 7
+          //сортировка
+          .catalogue-sorting
+            .catalogue-sorting-section
+              .catalogue-sorting-section__title Сортировать по:
+              ul.catalogue-sorting-section__list
+                li.catalogue-sorting-section__item
+                  // down - стрелка вниз(от дорогих к дешевым), up - стрелка вверх(от дешевых к дорогим)
+                  a(href="#").catalogue-sorting-section__link.down цене
+                    i.fas.fa-chevron-down
+                li.catalogue-sorting-section__item
+                  a(href="#").catalogue-sorting-section__link.active популярности
+                li.catalogue-sorting-section__item
+                  a(href="#").catalogue-sorting-section__link скидке
+            .catalogue-sorting-section
+              .catalogue-sorting-section__title Товаров на странице:
+              ul.catalogue-sorting-section__list
+                li.catalogue-sorting-section__item
+                  a(href="#").catalogue-sorting-section__link.active 9
+                li.catalogue-sorting-section__item
+                  a(href="#").catalogue-sorting-section__link 18
+                li.catalogue-sorting-section__item
+                  a(href="#").catalogue-sorting-section__link 30
+                li.catalogue-sorting-section__item
+                  a(href="#").catalogue-sorting-section__link 45
+          //выдача каталога
+          .catalogue__content.mb-30
+            .row.mb--30
+              .mb-30.col-xl-4.col-md-6.col-12
+                +card-1()
+              .mb-30.col-xl-4.col-md-6.col-12
+                +card-2()
+              .mb-30.col-xl-4.col-md-6.col-12
+                +card-1()
+              .mb-30.col-xl-4.col-md-6.col-12
+                +card-1()
+              .mb-30.col-xl-4.col-md-6.col-12
+                +card-2()
+              .mb-30.col-xl-4.col-md-6.col-12
+                +card-1()
+              .mb-30.col-xl-4.col-md-6.col-12
+                +card-1()
+              .mb-30.col-xl-4.col-md-6.col-12
+                +card-2()
+              .mb-30.col-xl-4.col-md-6.col-12
+                +card-1()
+          //pagination
+          include blocks/pagination
+  section.section
+    .container
+      .section-head
+        h2.section__title Вы смотрели
+      .catalogue-slider.slider.slider_default.arrows
+        .catalogue-slider__slide
+          +card-3()
+        .catalogue-slider__slide
+          +card-4()
+        .catalogue-slider__slide
+          +card-3()
+        .catalogue-slider__slide
+          +card-4()
+        .catalogue-slider__slide
+          +card-3()
+        .catalogue-slider__slide
+          +card-4()
+
+    

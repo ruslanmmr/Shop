@@ -1,0 +1,54 @@
+@import "../../node_modules/normalize.css/normalize";
+@import "./components/fonts";
+
+$colorA: #ff8900;
+$colorA2: #eb7d00;
+$colorG: #65666a;
+$colorH: #1a2126;
+$colorI: #888a90;
+$colorJ: #7e8084;
+$colorK: #595e69;
+
+$trs: .1s ease-in-out;
+$trs1: .25s ease-in-out;
+$trs2: .5s ease-in-out;
+$trs3: 1s ease-in-out;
+
+html {
+  font-size: 16px;
+}
+body {
+  min-width: 320px;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  color: $colorG;
+  font-weight: 400;
+}
+* {
+  box-sizing: border-box;
+  &::before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+input, textarea, a, button, label {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+  font-size: inherit;
+}
+a img {
+  pointer-events: none;
+}
+
+@import "./components/grid";
+@import "./components/typography";
+@import "./components/buttons";
+@import "./components/form";
+@import "./components/fancybox";
+@import "./components/items";
+@import "./components/slider";
+@import "./components/cards";
+@import "./components/blocks";
+@import "./components/filter";
+@import "./components/header";
+@import "./components/footer";

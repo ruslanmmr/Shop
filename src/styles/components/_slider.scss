@@ -1,0 +1,153 @@
+.slick-slide {
+  outline: none;
+  height: auto;
+}
+.slider {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity $trs1;
+  position: absolute;
+  .slick-track {
+    display: flex;
+    margin: 0;
+  }
+  a, button {
+    outline: none;
+  }
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+  }
+  .slick-dots {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    li {
+      display: block;
+      &:not(:last-child) {
+        margin-right: 3px;
+      }
+    }
+    button {
+      display: block;
+      height: 14px;
+      width: 14px;
+      border: 0;
+      background-color: transparent;
+      position: relative;
+      font-size: 0;
+      cursor: pointer;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        left: 2px;
+        top: 2px;
+        border-radius: 100%;
+        background-color: #fff;
+        transition: 0.3s;
+      }
+    }
+    .slick-active {
+      button:after {
+        background-color: $colorA;
+      }
+    }
+  }
+  .slick-arrow {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0;
+    padding: 0;
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: $trs1;
+    color: #fff;
+    width: 35px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: $colorA;
+    &:after {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      font-size: 20px;
+    }
+    &.hover,
+    &.touch {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: $colorA2;
+    }
+  }
+  .slick-next {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+    &:after {
+      content: "\f054";
+    }
+  }
+  .slick-prev {
+    left: 0;
+    border-radius: 0 4px 4px 0;
+    &:after {
+      content: "\f053";
+    }
+  }
+  &_default {
+    padding: 20px;
+    margin: -20px;
+    overflow: hidden;
+    .slick-list {
+      margin: 0 -15px;
+      overflow: visible;
+    }
+    .slick-slide {
+      padding: 0 15px;
+    }
+    .slick-next {
+      right: 20px;
+    }
+    .slick-prev {
+      left: 20px;
+    }
+  }
+}
+
+
+@media all and(max-width: 1200px) {
+  .slider {
+    &_default {
+      .slick-list {
+        margin: 0 -10px;
+      }
+      .slick-slide {
+        padding: 0 10px;
+      }
+    }
+  }
+}
+@media all and(max-width: 1024px) {
+  .slider {
+    .slick-dots {
+      bottom: 18px;
+    }
+  }
+}
+@media all and(max-width: 576px) {
+  .brands-slider.size2 {
+    padding: 10px 20px;
+  } 
+}

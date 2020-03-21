@@ -1,0 +1,95 @@
+h1,h2,h3,h4,h5,h6 {
+  margin: 2.5rem 0 1rem 0;
+  line-height: 1.25;
+  font-weight: 700;
+  color: $colorH;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+h1, h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1.125rem;
+}
+p {
+  margin: 0 0 1rem 0;
+  text-indent: 1.5rem;
+  text-align: justify;
+  text-align-last: left;
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.list {
+  margin: 0;
+  &:not(:last-child) {
+    margin: 0 0 1rem 0;
+  }
+  padding-left: 1.5rem;
+  list-style: none;
+  li {
+    padding-left: 24px;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+      width: 16px;
+      height: 16px;
+      font-weight: 900;
+      font-size: 10px;
+      color: #fff;
+      display: block;
+      text-align: center;
+      line-height: 16px;
+      border-radius: 100%;
+      background-color: $colorA;
+    }
+  }
+}
+ul.list {
+  li {
+    &:before {
+      content: "\f054";
+      font-family: 'Font Awesome 5 Free';
+    }
+  }
+}
+ol.list {
+  counter-reset: counter;
+  li {
+    counter-increment: counter;
+    &:before {
+      content: counter(counter);
+    }
+  }
+}
+
+@media all and(max-width: 1200px) {
+  h1, h2 {
+    font-size: 2.5rem;
+  }
+}
+@media all and(max-width: 576px) {
+  h1, h2 {
+    font-size: 1.7rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,105 @@
+header.header
+  .container
+    .logo.header__logo
+      a(href="/").logo__link
+        img(src="http://placehold.it/250x60" alt='logo')
+    .header__nav
+      nav.desktop-nav
+        ul.desktop-nav__list
+          mixin link(title,href)
+            li.desktop-nav__item
+              a(href=href).desktop-nav__link.link=title
+          +link('о нас','#')
+          +link('mybarbershop','#')
+          +link('новости','#')
+          +link('доставка и оплата','#')
+          +link('контакты','#')
+      form(action="#").search 
+        input(type="text" placeholder="введите название или артикул товара").input.search__input
+        button.button.search__button
+          i.fas.fa-search
+    .header__info
+      .header__info-left
+        a(href="tel:74950232424").header__info-phone +7 495 023 24 24
+        span.header__info-txt с 10 до 19 / Пн - Пт
+      .header__info-right
+        a(href="#auth" data-fancybox data-touch='false').button.button_style-1.header__auth
+          i.fas.fa-user
+          span Вход
+        // или
+        //<a class="button button_style-1 header__auth" href="profile.html"><i class="fas fa-user"></i><span>Вася Пупкин</span></a>
+        
+        a(href="cart.html").button.button_style-1
+          i.fas.fa-shopping-basket
+          span Корзина
+          span.count 5
+        a(href="javascript:void(0);").button.nav-toggle
+          i.fas.fa-bars
+//catalogue-nav
+include nav
+//overlay
+.overlay
+//mobile-nav
+nav.mobile-nav
+  .mobile-nav__head
+    form(action="#").search 
+      input(type="text" placeholder="Поиск").input.search__input
+      button.button.search__button
+        i.fas.fa-search
+    a(href="javascript:void(0);").button.nav-toggle
+      i.fas.fa-times
+  .mobile-nav__content.scroll-container
+    .scroll-child
+      .mobile-nav__section
+        a(href="#auth" data-fancybox data-touch='false').button.button_style-1
+          i.fas.fa-user
+          span Вход / Регистрация
+        //<a class="button button_style-1" href="profile.html"><i class="fas fa-user"></i><span>Вася Пупкин</span><i class="fas fa-chevron-right"></i></a>
+      .mobile-nav__section
+        a(href="cart.html").button.button_style-1
+          i.fas.fa-shopping-basket
+          span Корзина
+          span.count 5
+      .mobile-nav__section.toggle-group
+        a(href="javascript:void(0)" data-show-text='Каталог товаров' data-hide-text='Скрыть каталог').button.button_style-1.toggle-button
+          i.fas.fa-list
+          span Каталог товаров
+        ul.toggle-content
+          li
+            a(href="#").link Категория 1
+          li
+            a(href="#").link Категория 2
+          li
+            a(href="#").link Категория 3
+          li
+            a(href="#").link Категория 4
+          li
+            a(href="#").link Категория 5
+          li
+            a(href="#").link Категория 6
+      .mobile-nav__section
+        a(href="#").button.button_style-1
+          | Волосы
+        a(href="#").button.button_style-1
+          | Борода и усы
+        a(href="#").button.button_style-1
+          | Лицо и тело
+        a(href="#").button.button_style-1
+          | Атрибутика
+        a(href="#").button.button_style-1
+          | Акции
+      .mobile-nav__section
+        a(href="#").button.button_style-1
+          | О нас
+        a(href="#").button.button_style-1
+          | Mybarbershop
+        a(href="#").button.button_style-1
+          | Новости
+        a(href="#").button.button_style-1
+          | Доставка и оплата
+        a(href="#").button.button_style-1
+          | Контакты
+      .mobile-nav__section
+        a(href="tel:").button.button_style-1
+          i.fas.fa-phone
+          span +7 495 023 24 24

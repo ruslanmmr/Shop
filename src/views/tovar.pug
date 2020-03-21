@@ -1,0 +1,133 @@
+extends layout/layout
+block content
+  include blocks/breadcrumbs
+  //cards
+  include blocks/cards
+  main.main
+    section.section.catalogue-card
+      .container
+        .section-head.left
+          h1.section__title Заголовок продукта
+        .catalogue-card__top
+          .row.mb--30
+            .col-xl-7.col-sm-12.mb-30
+              //главный слайдер
+              .slider.js-custom-slider.item-slider
+                .item-slider__slide
+                  iframe(width='560', height='315', src='https://www.youtube.com/embed/sYK6mQGy5UA', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
+                .item-slider__slide.cover
+                  img(data-src="img/image2.jpg" alt="image").lazy
+                .item-slider__slide.cover
+                  img(data-src="img/image3.jpg" alt="image").lazy
+                .item-slider__slide.cover
+                  img(data-src="img/image2.jpg" alt="image").lazy
+                .item-slider__slide.cover
+                  img(data-src="img/image3.jpg" alt="image").lazy
+              //навигационный слайдер
+              .slider.slider_default.js-custom-slider.nav-slider
+                .nav-slider-slide
+                  a(href="javascript:void(0);").nav-slider-slide__container
+                    i.fas.fa-film
+                .nav-slider-slide
+                  a(href="javascript:void(0);").nav-slider-slide__container.cover
+                    img(data-src="img/image2.jpg" alt="image").lazy
+                .nav-slider-slide
+                  a(href="javascript:void(0);").nav-slider-slide__container.cover
+                    img(data-src="img/image3.jpg" alt="image").lazy
+                .nav-slider-slide
+                  a(href="javascript:void(0);").nav-slider-slide__container.cover
+                    img(data-src="img/image2.jpg" alt="image").lazy
+                .nav-slider-slide
+                  a(href="javascript:void(0);").nav-slider-slide__container.cover
+                    img(data-src="img/image3.jpg" alt="image").lazy
+            .col-xl-5.col-sm-12.mb-30
+              .catalogue-card-description
+                .catalogue-card-description__section
+                  span.catalogue-card-description__art Код товара: 
+                    strong 559771
+                .catalogue-card-description__section
+                  .catalogue-card-description__price
+                    span.old 12 699 ₽
+                    span.current 9990 ₽ 
+                    span.discount Выгода: 2 000 ₽
+                  form(action="#").catalogue-card-description__order-form.row.compact
+                    .col-xl-auto.col-md-6.col-sm-4.col-6
+                      .calc-count-block
+                        a(href="javascript:void(0)").calc-count-block__btn.js-minus –
+                        input(type="text" value='1').input.num-only
+                        a(href="javascript:void(0)").calc-count-block__btn.js-plus +
+                    .col-xl-auto.col-md-6.col-sm-4.col-6
+                      button.button.button_style-5 В корзину
+                .catalogue-card-description__section
+                  h5.catalogue-card-description__title Характеристики
+                  ul.catalogue-card-description__list
+                    li Страна производитель: 
+                      span Лесото
+                    li Бренд: 
+                      a(href="#").link.link_bordered Ragnarr
+                    li Размер упаковки:  
+                      span 300/230/100
+                    li Масса/объем: 
+                      span 100 мл
+                    li Артикул: 
+                      span 559771
+                .catalogue-card-description__section
+                  a(href="#").link.link_bordered Посмотреть все товары раздела «Подарочные наборы»
+        .catalogue-card__text
+          h4 Описание:
+          p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+          h5 Состав:
+          ol.list
+            li Sed ut perspiciatis unde omnis iste natus error sit voluptatem!
+            li Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            li Sed ut perspiciatis unde omnis iste natus error sit voluptatem!
+          h5 Способ применения:
+          ul.list
+            li Sed ut perspiciatis unde omnis iste natus error sit voluptatem!
+            li Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+            li Sed ut perspiciatis unde omnis iste natus error sit voluptatem!
+    section.section
+      .container
+        .section-head
+          h2.section__title С этим товаром покупают
+        .catalogue-slider.slider.slider_default.arrows
+          .catalogue-slider__slide
+            +card-3()
+          .catalogue-slider__slide
+            +card-4()
+          .catalogue-slider__slide
+            +card-3()
+          .catalogue-slider__slide
+            +card-4()
+          .catalogue-slider__slide
+            +card-3()
+          .catalogue-slider__slide
+            +card-4()
+    section.section
+      .container
+        .section-head
+          h2.section__title Аналогичные товары
+        .catalogue-slider.slider.slider_default.arrows
+          .catalogue-slider__slide
+            +card-4()
+          .catalogue-slider__slide
+            +card-3()
+          .catalogue-slider__slide
+            +card-4()
+    section.section
+      .container
+        .section-head
+          h2.section__title Вы смотрели
+        .catalogue-slider.slider.slider_default.arrows
+          .catalogue-slider__slide
+            +card-3()
+          .catalogue-slider__slide
+            +card-4()
+          .catalogue-slider__slide
+            +card-3()
+          .catalogue-slider__slide
+            +card-4()
+          .catalogue-slider__slide
+            +card-3()
+          .catalogue-slider__slide
+            +card-4()

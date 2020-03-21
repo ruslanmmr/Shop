@@ -1,0 +1,121 @@
+.filter {
+  margin-bottom: 30px;
+  &__content {
+    border-radius: 5px;
+    border: 1px solid $colorI;
+    overflow: hidden;
+  }
+  &__buttons {
+    padding: 0 15px;
+  }
+  &__head {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid $colorI;
+  }
+  &__title {
+    margin: 0;
+  }
+  &__container {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px 0 30px 0;
+  }
+  .checkbox, .radio {
+    margin: 0;
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  .button {
+    width: 100%;
+  }
+}
+
+
+.filter-section {
+  &:not(:last-child) {
+    border-bottom: 1px solid $colorI;
+  }
+  &__price {
+    padding: 15px;
+  }
+  &__head {
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    position: relative;
+    text-decoration: none;
+    i {
+      display: block;
+      position: absolute;
+      line-height: 22px;
+      right: 15px;
+      top: 10px;
+      transition: $trs1;
+      color: $colorH;
+    }
+    &.touch,
+    &.hover {
+      .filter-section__title, i {
+        color: $colorA;
+      }
+    }
+    &.active {
+      i {
+        transform: rotate(180deg);
+        color: $colorA;
+      }
+    }
+  }
+  &__title {
+    font-size: 18px;
+    margin: 0;
+    color: inherit;
+    transition: $trs1;
+    color: $colorH;
+  }
+  &__content {
+    max-height: 170px;
+  }
+  .scroll-child {
+    padding: 15px 30px 15px 15px;
+  }
+  .scrollbar-track {
+    right: 17px;
+  }
+}
+
+@media all and(min-width: 769px) {
+  .filter {
+    &__toggle {
+      display: none !important;
+    }
+    &__container {
+      display: block !important;
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .filter {
+    &__title {
+      font-size: 20px;
+    }
+    &__buttons {
+      padding: 0;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .filter {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .filter {
+    margin-bottom: 20px;
+  }
+}

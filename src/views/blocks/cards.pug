@@ -1,0 +1,68 @@
+mixin card-1()
+  .c-card
+    .c-card__image
+      .label-new
+        span new
+      .label-discount -20%
+      a(href="#").cover
+        img.lazy(data-src='img/image2.jpg' alt='image')
+    .c-card__description
+      h6.c-card__title
+        a(href="#").link Крем по уходу за бородой
+      p.c-card__text Компактный и легкий. Поможет справиться с лишней растительностью в носу и ушах.
+    .c-card__bottom
+      .price-item
+        span.price-item__old 700 р.
+        span.price-item__current.text-color-a 500 р.
+      a(href="#").button 
+        i.fas.fa-shopping-basket
+        | В корзину
+mixin card-2()
+  .c-card
+    .c-card__image
+      .label-new
+        span new
+      a(href="#").cover
+        img.lazy(data-src='img/image3.jpg' alt='image')
+    .c-card__description
+      h6.c-card__title
+        a(href="#").link Подарочный набор для него
+      p.c-card__text Лучший подарок для самых требовательных мужчин.
+    .c-card__bottom
+      .price-item
+        span.price-item__current.text-color-b 3 200 руб.
+      a(href="#").button 
+        i.fas.fa-shopping-basket
+        | В корзину
+        
+
+mixin card-3()
+  a(href="#").s-card
+    .s-card__image.cover
+      .label-new
+        span new
+      img.lazy(data-src='img/image2.jpg' alt='image')
+    .s-card__description
+      h6.s-card__title Профессиональный набор для барбера
+      .price-item
+        span.price-item__old 700 р.
+        span.price-item__current.text-color-a 500 р.
+mixin card-4()
+  a(href="#").s-card
+    .s-card__image.cover
+      .label-discount -20%
+      img.lazy(data-src='img/image3.jpg' alt='image')
+    .s-card__description
+      h6.s-card__title Профессиональный набор для барбера
+      .price-item
+        span.price-item__current.text-color-b 5000 р.
+
+
+
+mixin card-5(title, href)
+  a(href="#").popular-card
+    .popular-card__image.cover
+      img.lazy(data-src=href alt='image')
+    h6.popular-card__title=title
+
+    

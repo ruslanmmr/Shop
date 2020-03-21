@@ -1,0 +1,257 @@
+.c-card {
+  border: 1px solid $colorI;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .label-new,
+  .label-discount {
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+  }
+  .label-new {
+    left: 0;
+  }
+  .label-discount {
+    right: 0;
+  }
+  &__image {
+    position: relative;
+    flex: 0 0 auto;
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 68%;
+      position: relative;
+      z-index: -1;
+    }
+    .cover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      img {
+        transition: $trs1;
+      }
+      &.touch,
+      &.hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  &__description {
+    flex: 1 1 100%;
+    padding: 10px;
+  }
+  &__title {
+    text-decoration: none;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  &__text {
+    font-size: 14px;
+    text-indent: 0;
+  }
+  &__bottom {
+    flex: 0 0 auto;
+    padding: 0 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .price-item {
+    margin-right: 10px;
+  }
+  .button {
+    width: auto;
+    background-color: $colorA;
+    color: #fff;
+    padding: 0 15px;
+    line-height: 35px;
+    margin-right: -10px;
+    i {
+      margin-right: 5px;
+    }
+    &.touch,
+    &.hover {
+      background-color: $colorA2;
+    }
+    &.mousedown {
+      transform: translateX(5%) scale(0.9);
+    }
+  }
+}
+
+.label-new {
+  background-color: $colorA;
+  height: 25px;
+  width: 100px;
+  color: #fff;
+  overflow: hidden;
+  text-align: right;
+  padding-right: 10px;
+  span {
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: 700;
+    transform: rotate(-10deg) translateY(-0.2em);
+    font-style: italic;
+    font-size: 24px;
+  }
+}
+.label-discount {
+  background-color: $colorA;
+  line-height: 25px;
+  padding: 0 10px;
+  color: #fff;
+  font-weight: 700;
+}
+.price-item {
+  &__old {
+    text-decoration: line-through;
+    font-size: 14px;
+    margin-right: 10px;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  &__current {
+    font-weight: 700;
+    font-size: 18px;
+    white-space: nowrap;
+    display: inline-block;
+  }
+}
+
+.s-card {
+  border: 1px solid $colorI;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: $trs1 transform;
+  .label-new,
+  .label-discount {
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+  }
+  .label-new {
+    left: 0;
+  }
+  .label-discount {
+    right: 0;
+  }
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+  &__image {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    transition: $trs1;
+  }
+  &__description {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    transition: $trs1;
+    transform: translateY(100%);
+  }
+  &__title {
+    font-weight: normal;
+    margin-bottom: 10px;
+  }
+  &.touch,
+  &.hover {
+    img {
+      transform: scale(1.1);
+    }
+    .s-card__description {
+      transform: translateY(0);
+    }
+  }
+  &.mousedown {
+    transform: scale(0.95);
+  }
+}
+
+.popular-card {
+  border: 1px solid $colorI;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: $trs1 transform;
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 42%;
+  }
+  &__image {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    transition: $trs1;
+  }
+  &__title {
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    z-index: 2;
+    transform: translateX(10px);
+    background-color: $colorA;
+    line-height: 30px;
+    padding: 0 20px 0 10px;
+    min-width: 120px;
+    color: #fff;
+    margin: 0;
+    transition: $trs1;
+  }
+  &.touch,
+  &.hover {
+    img {
+      transform: scale(1.1);
+    }
+    .popular-card__title {
+      transform: translateX(0);
+    }
+  }
+  &.mousedown {
+    transform: scale(0.95);
+  }
+}
+
+@media all and(max-width: 768px) {
+  .s-card::before,
+  .popular-card::before {
+    padding-top: 68%;
+  } 
+}
