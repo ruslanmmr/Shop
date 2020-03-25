@@ -4,7 +4,7 @@
 $colorA: #ff8900;
 $colorA2: #eb7d00;
 $colorG: #65666a;
-$colorH: #1a2126;
+$colorH: #1a2126; 
 $colorI: #888a90;
 $colorJ: #7e8084;
 $colorK: #595e69;
@@ -36,11 +36,19 @@ input, textarea, a, button, label {
   outline: none;
   font-size: inherit;
 }
+textarea {
+  resize: vertical;
+}
 a img {
   pointer-events: none;
 }
 
+@import '../../node_modules/tippy.js/dist/tippy.css';
+@import '../../node_modules/tippy.js/themes/light-border.css';
+@import '../../node_modules/tippy.js/animations/scale-extreme.css';
+
 @import "./components/grid";
+@import "./components/helpers";
 @import "./components/typography";
 @import "./components/buttons";
 @import "./components/form";
@@ -52,3 +60,5 @@ a img {
 @import "./components/filter";
 @import "./components/header";
 @import "./components/footer";
+@import "./components/cabinet";
+@import "./components/cart";

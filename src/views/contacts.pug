@@ -1,0 +1,54 @@
+extends layout/layout
+block content
+  //cards
+  include blocks/cards
+  include blocks/breadcrumbs
+  main.main
+    section.section
+      .container
+        .section-head.left
+          h1.section__title НАШИ КОНТАКТЫ
+        .section__content.row.mb--30
+          .contact-block.mb-30.col-xl-3.col-md-4.col-sm-6.col-12
+            h6 Юридический адрес
+            ul.contact-block__list
+              li
+                | 123456, Россия, Москва, Красная площадь, 3.
+              li
+                a(href="tel:").link +7 499 123-45-67
+              li
+                a(href="tel:").link +7 903 000-00-00
+          .contact-block.mb-30.col-xl-3.col-md-4.col-sm-6.col-12
+            h6 Сотрудничество
+            ul.contact-block__list
+              li
+                a(href="tel:").link +7 499 123-45-67
+              li
+                a(href="mailto:opt@mybarbershop.ru").link opt@mybarbershop.ru
+          .contact-block.mb-30.col-xl-3.col-md-4.col-sm-6.col-12
+            h6 Оптовые закупки
+            ul.contact-block__list
+              li
+                a(href="tel:").link +7 499 123-45-67
+              li
+                a(href="mailto:opt@mybarbershop.ru").link opt@mybarbershop.ru
+          .contact-block.mb-30.col-xl-3.col-md-4.col-sm-6.col-12
+            h6 Техническая поддержка
+            ul.contact-block__list
+              li
+                a(href="tel:").link +7 499 123-45-67
+              li
+                a(href="tel:").link +7 499 123-45-67
+              li
+                a(href="tel:").link +7 499 123-45-67
+              li 
+                a(href="mailto:mymarket@mybarbershop.ru").link mymarket@mybarbershop.ru
+              li skype: mymarket
+          .contact-block.mb-30.col-xl-3.col-md-4.col-sm-6.col-12
+            h6 Наши реквизиты:
+            ul.contact-block__list
+              li ИНН: 772801349577
+              li Р/С: 40802810500000972835
+              li Банк: АО "ТИНЬКОФФ БАНК"
+              li БИК: 044525974
+              li К/С: 30101810145250000974

@@ -1,4 +1,146 @@
 extends layout/layout
 block content
-  | Корзина
-  
+  main.main
+    .container
+      section.section
+        .section-head.left
+          h2.section__title Ваша корзина
+        .section__content
+          .cart-list
+            .cart-list__head
+              span Фото
+              span Наименование
+              span Количество
+              span Скидка
+              span Сумма
+            .cart-list__container
+              //block
+              .cart-list-block
+                .cart-list-block__item.cart-list-photo
+                  a(href="#").cart-list-photo__image.cover
+                    img(data-src="img/image2.jpg" alt="img").lazy
+                .cart-list-block__item.cart-list-text
+                  a(href="#").cart-list-block__title.link Крем бальзам «Barrakuda»
+                  br
+                  span Код товара  
+                    strong 559658
+                .cart-list-block__item.cart-list-count
+                  .calc-count-block
+                    a(href="javascript:void(0)").calc-count-block__btn.js-minus –
+                    input.input(type="text" value='1')
+                    a(href="javascript:void(0)").calc-count-block__btn.js-plus +
+                .cart-list-block__item.cart-list-discount
+                  span -20% по промокоду
+                  //span.cart-list-discount__item –
+                .cart-list-block__item.price-item
+                  span.price-item__old 700 р. 
+                  br
+                  span.price-item__current 10 000 р.
+                a(href="javascript:void(0)" data-tippy-content='Удалить товар').cart-list-block__del
+                  i.fas.fa-times
+              //block
+              .cart-list-block
+                .cart-list-block__item.cart-list-photo
+                  a(href="#").cart-list-photo__image.cover
+                    img(data-src="img/image3.jpg" alt="img").lazy
+                .cart-list-block__item.cart-list-text
+                  a(href="#").cart-list-block__title.link Крем бальзам «Barrakuda»
+                  br
+                  span Код товара  
+                    strong 559658
+                .cart-list-block__item.cart-list-count
+                  .calc-count-block
+                    a(href="javascript:void(0)").calc-count-block__btn.js-minus –
+                    input.input(type="text" value='1')
+                    a(href="javascript:void(0)").calc-count-block__btn.js-plus +
+                .cart-list-block__item.cart-list-discount
+                  span Без скидки
+                  //span.cart-list-discount__item –
+                .cart-list-block__item.price-item
+                  span.price-item__current 1 000 р.
+                a(href="javascript:void(0)" data-tippy-content='Удалить товар').cart-list-block__del
+                  i.fas.fa-times 
+            .cart-list__bottom
+              form(action="#").s-item-form
+                .s-item-form__container
+                  input.input(type="text" placeholder="Введите промокод" required)
+                  button.button.button_style-2 Применить
+              .price-total-table
+                table
+                  tr
+                    th Сумма заказа:
+                    th 30 999 ₽
+                  tr
+                    th Скидка:
+                    th 4 999 ₽
+                  tr
+                    th Итого:
+                    th 30 999 ₽
+      
+      section.section
+        .section-head.left
+          h3.section__title Контактные данные
+        .section__content
+          .row.mb--20
+            .col-xl-7.col-md-12.col-12.mb-20
+              .row.mb--20
+                .col-xl-6.col-12.mb-20
+                  input.input.input_style-1(type="text" placeholder="Имя")
+                .col-xl-6.col-12.mb-20
+                  input.input.input_style-1(type="text" placeholder="Фамилия")
+                .col-xl-6.col-12.mb-20
+                  input.input.input_style-1(type="text" placeholder="Телефон").masked
+                .col-xl-6.col-12.mb-20
+                  input.input.input_style-1(type="email" placeholder="E-mail")
+            .col-xl-5.col-md-12
+              input.input.input_style-1(type="text" placeholder="Адрес доставки:").mb-20
+              textarea.input.input_style-1(placeholder="Комментарий к заказу")
+      
+      section.section
+        .section-head.left
+          h3.section__title Доставка
+        .section__content.row.mb--30
+          .col-xl-5.col-md-6.col-12.mb-30
+            label.radio.mb-20
+              input(type="radio" name='1')
+              | по России
+              img(data-src="img/cdek.png" alt="pay" style='height:20px;margin:0 0 -5px 10px').lazy
+            label.radio
+              input(type="radio" name='1')
+              | по Москве
+              img(data-src="img/dostavista.png" alt="pay" style='height:20px;margin:0 0 -5px 10px').lazy
+          .col-xl-7.col-md-6.col-12.mb-30
+            .map
+              iframe.map__item(src="https://yandex.ru/map-widget/v1/-/CKQJnM~x" frameborder="0" allowfullscreen="true")
+      
+      section.section
+        .section-head.left
+          h3.section__title Подтверждение заказа
+        .section__content.row.space-between.mb--30
+          .price-total-table.col-xl-auto.mb-30
+            table
+              tr
+                th Товары 
+                  strong.text-color-b 2
+                th 30 999 ₽
+              tr
+                th Доставка
+                th 
+                  img(data-src="img/dostavista.png" alt="pay" style='height:20px;margin:0 0 -5px 0').lazy
+              tr
+                th Всего к оплате:
+                th 30 999 ₽
+          .col-xl-4.col-md-6.col-12.mb-30
+            a(href="#").button.button_style-3.mb-15 Выставить счет
+            button.button.button_style-2.mb-15 ОПЛАТИТЬ
+            label.checkbox
+              i.fas.fa-check
+              input(type="checkbox" checked disabled)
+              | Согласен с условиями 
+              a(href="#").link.link_bordered договора купли-продажи 
+              | и на обработку 
+              a(href="#").link.link_bordered персональных данных 
+
+          
+              
+

@@ -8,6 +8,10 @@ lazySizes.cfg.loadedClass = 'loaded';
 lazySizes.cfg.init = false;
 import { gsap } from "gsap";
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+import tippy from 'tippy.js';
+import autosize from 'autosize';
+import Inputmask from "inputmask";
+
 
 $(document).ready(function(){
   hoverTouchEvents();
@@ -17,10 +21,13 @@ $(document).ready(function(){
   inputs.init();
   calc.init();
   catalogue.init();
+  tooltips.init();
   slider();
   scroll();
   filter();
   nav();
+  mask();
+  autosize($('textarea'));
 })
 
 //загрузили все
@@ -29,7 +36,7 @@ window.onload = function() {
     toggleblocks();
     lazySizes.init();
     preloader.hide();
-  }, 0)
+  }, 500)
 };
 
 //preloader
@@ -37,26 +44,38 @@ let preloader = {
   element: $('.preloader'),
   hide: function() {
     let animation = gsap.timeline({onComplete:function(){preloader.element.remove()}})
-      .to(preloader.element, {duration:0.75,autoAlpha:0,ease:'power2.out'})
+      .to(preloader.element, {duration:0.5,autoAlpha:0,ease:'power2.inOut'})
   }
 }
 //hover/touch custom events
 function hoverTouchEvents() {
   $(document).on('mouseenter mouseleave touchstart touchend mousedown mouseup', 'a,button,label', function(event) {
     let $target = $(this);
-    if(event.type=='touchstart' && !device.desktop()) {
-      $target.addClass('touch');
-    } else if(event.type=='mouseenter' && device.desktop()) {
-      $target.addClass('hover');
-    } else if(event.type=='mousedown' && device.desktop()) {
-      $target.addClass('mousedown');
-    } else if(event.type=='mouseup' && device.desktop()) {
-      $target.removeClass('mousedown');
-    } else {
-      $target.removeClass('touch');
-      $target.removeClass('hover');
-      $target.removeClass('mousedown');
+
+    //mobile events
+    if(!device.desktop()) {
+      if(event.type=='touchstart') {
+        $target.addClass('touch');
+      } else if(event.type=='touchend') {
+        setTimeout(function(){
+          $target.removeClass('touch');
+        }, 250)
+      }
     }
+
+    //desktop events
+    else {
+      if(event.type=='mouseenter') {
+        $target.addClass('hover');
+      } else if(event.type=='mousedown') {
+        $target.addClass('mousedown');
+      } else if(event.type=='mouseup') {
+        $target.removeClass('mousedown');
+      } else {
+        $target.removeClass('hover');
+        $target.removeClass('mousedown');
+      }
+    }  
   })
 }
 //modals/popups
@@ -326,6 +345,17 @@ function slider() {
   });
 }
 
+function mask() {
+  let $mask = document.querySelectorAll('.masked');
+  if($mask!==null) {
+    Inputmask({
+      mask: "+7 999 999-9999",
+      clearIncomplete: true
+    }).mask($mask);
+  }
+
+}
+
 function nav() {
   let $nav = $('.mobile-nav'),
       $toggle = $('.nav-toggle'),
@@ -364,6 +394,18 @@ function nav() {
       close();
     }
   })
+}
+
+let tooltips = {
+  el: '[data-tippy-content]',
+  init: function() {
+    tippy(tooltips.el, {
+      duration: 300,
+      theme: 'light-border',
+      animation: 'scale-extreme',
+      inertia: true
+    });
+  }
 }
 
 //toggle blocks

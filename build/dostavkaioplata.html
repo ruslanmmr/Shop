@@ -284,151 +284,46 @@
         </div>
       </nav>
       <div class="page-container">
-        <main class="main">
+        <!--cards-->
+        <div class="breadcrumbs">
           <div class="container">
-            <section class="section">
-              <div class="section-head left">
-                <h2 class="section__title">Ваша корзина</h2>
-              </div>
-              <div class="section__content">
-                <div class="cart-list">
-                  <div class="cart-list__head"><span>Фото</span><span>Наименование</span><span>Количество</span><span>Скидка</span><span>Сумма</span></div>
-                  <div class="cart-list__container">
-                    <!--block-->
-                    <div class="cart-list-block">
-                      <div class="cart-list-block__item cart-list-photo"><a class="cart-list-photo__image cover" href="#"><img class="lazy" data-src="img/image2.jpg" alt="img"></a></div>
-                      <div class="cart-list-block__item cart-list-text"><a class="cart-list-block__title link" href="#">Крем бальзам «Barrakuda»</a><br><span>Код товара  <strong>559658</strong></span></div>
-                      <div class="cart-list-block__item cart-list-count">
-                        <div class="calc-count-block"><a class="calc-count-block__btn js-minus" href="javascript:void(0)">–</a>
-                          <input class="input" type="text" value="1"><a class="calc-count-block__btn js-plus" href="javascript:void(0)">+</a>
-                        </div>
-                      </div>
-                      <div class="cart-list-block__item cart-list-discount"><span>-20% по промокоду</span>
-                        <!--span.cart-list-discount__item –-->
-                      </div>
-                      <div class="cart-list-block__item price-item"><span class="price-item__old">700 р. </span><br><span class="price-item__current">10 000 р.</span></div><a class="cart-list-block__del" href="javascript:void(0)" data-tippy-content="Удалить товар"><i class="fas fa-times"></i></a>
-                    </div>
-                    <!--block-->
-                    <div class="cart-list-block">
-                      <div class="cart-list-block__item cart-list-photo"><a class="cart-list-photo__image cover" href="#"><img class="lazy" data-src="img/image3.jpg" alt="img"></a></div>
-                      <div class="cart-list-block__item cart-list-text"><a class="cart-list-block__title link" href="#">Крем бальзам «Barrakuda»</a><br><span>Код товара  <strong>559658</strong></span></div>
-                      <div class="cart-list-block__item cart-list-count">
-                        <div class="calc-count-block"><a class="calc-count-block__btn js-minus" href="javascript:void(0)">–</a>
-                          <input class="input" type="text" value="1"><a class="calc-count-block__btn js-plus" href="javascript:void(0)">+</a>
-                        </div>
-                      </div>
-                      <div class="cart-list-block__item cart-list-discount"><span>Без скидки</span>
-                        <!--span.cart-list-discount__item –-->
-                      </div>
-                      <div class="cart-list-block__item price-item"><span class="price-item__current">1 000 р.</span></div><a class="cart-list-block__del" href="javascript:void(0)" data-tippy-content="Удалить товар"><i class="fas fa-times"> </i></a>
-                    </div>
-                  </div>
-                  <div class="cart-list__bottom">
-                    <form class="s-item-form" action="#">
-                      <div class="s-item-form__container">
-                        <input class="input" type="text" placeholder="Введите промокод" required>
-                        <button class="button button_style-2">Применить</button>
-                      </div>
-                    </form>
-                    <div class="price-total-table">
-                      <table>
-                        <tr>
-                          <th>Сумма заказа:</th>
-                          <th>30 999 ₽</th>
-                        </tr>
-                        <tr>
-                          <th>Скидка:</th>
-                          <th>4 999 ₽</th>
-                        </tr>
-                        <tr>
-                          <th>Итого:</th>
-                          <th>30 999 ₽</th>
-                        </tr>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="section">
-              <div class="section-head left">
-                <h3 class="section__title">Контактные данные</h3>
-              </div>
-              <div class="section__content">
-                <div class="row mb--20">
-                  <div class="col-xl-7 col-md-12 col-12 mb-20">
-                    <div class="row mb--20">
-                      <div class="col-xl-6 col-12 mb-20">
-                        <input class="input input_style-1" type="text" placeholder="Имя">
-                      </div>
-                      <div class="col-xl-6 col-12 mb-20">
-                        <input class="input input_style-1" type="text" placeholder="Фамилия">
-                      </div>
-                      <div class="col-xl-6 col-12 mb-20">
-                        <input class="input input_style-1 masked" type="text" placeholder="Телефон">
-                      </div>
-                      <div class="col-xl-6 col-12 mb-20">
-                        <input class="input input_style-1" type="email" placeholder="E-mail">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-xl-5 col-md-12">
-                    <input class="input input_style-1 mb-20" type="text" placeholder="Адрес доставки:">
-                    <textarea class="input input_style-1" placeholder="Комментарий к заказу"></textarea>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="section">
-              <div class="section-head left">
-                <h3 class="section__title">Доставка</h3>
-              </div>
-              <div class="section__content row mb--30">
-                <div class="col-xl-5 col-md-6 col-12 mb-30">
-                  <label class="radio mb-20">
-                    <input type="radio" name="1">по России<img class="lazy" data-src="img/cdek.png" alt="pay" style="height:20px;margin:0 0 -5px 10px">
-                  </label>
-                  <label class="radio">
-                    <input type="radio" name="1">по Москве<img class="lazy" data-src="img/dostavista.png" alt="pay" style="height:20px;margin:0 0 -5px 10px">
-                  </label>
-                </div>
-                <div class="col-xl-7 col-md-6 col-12 mb-30">
-                  <div class="map">
-                    <iframe class="map__item" src="https://yandex.ru/map-widget/v1/-/CKQJnM~x" frameborder="0" allowfullscreen="true"></iframe>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="section">
-              <div class="section-head left">
-                <h3 class="section__title">Подтверждение заказа</h3>
-              </div>
-              <div class="section__content row space-between mb--30">
-                <div class="price-total-table col-xl-auto mb-30">
-                  <table>
-                    <tr>
-                      <th>Товары <strong class="text-color-b">2</strong></th>
-                      <th>30 999 ₽</th>
-                    </tr>
-                    <tr>
-                      <th>Доставка</th>
-                      <th> <img class="lazy" data-src="img/dostavista.png" alt="pay" style="height:20px;margin:0 0 -5px 0"></th>
-                    </tr>
-                    <tr>
-                      <th>Всего к оплате:</th>
-                      <th>30 999 ₽</th>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-xl-4 col-md-6 col-12 mb-30"><a class="button button_style-3 mb-15" href="#">Выставить счет</a>
-                  <button class="button button_style-2 mb-15">ОПЛАТИТЬ</button>
-                  <label class="checkbox"><i class="fas fa-check"></i>
-                    <input type="checkbox" checked disabled>Согласен с условиями <a class="link link_bordered" href="#">договора купли-продажи </a>и на обработку <a class="link link_bordered" href="#">персональных данных </a>
-                  </label>
-                </div>
-              </div>
-            </section>
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item"><a class="link breadcrumbs__link" href="#">Главная</a></li>
+              <li class="breadcrumbs__item"><a class="link breadcrumbs__link" href="#">Каталог</a></li>
+              <li class="breadcrumbs__item">Товар</li>
+            </ul>
           </div>
+        </div>
+        <main class="main">
+          <section class="section">
+            <div class="container">
+              <div class="section-head left">
+                <h1 class="section__title">доставка и Оплата</h1>
+              </div>
+              <div class="section__content">
+                <h5 class="text-color-a">ДОСТАВКА</h5>
+                <div class="row align-center">
+                  <div class="col-xl-auto">
+                    <h6>по России</h6>
+                  </div>
+                  <div class="col-xl-auto"><img class="lazy" data-src="img/cdek.png" alt="pay" style="display:block;height:26px;margin-bottom:1rem;"></div>
+                </div>
+                <p>При получении заказа от курьера службы СДЭК или в пункте приема и выдачи заказов СДЭК, пожалуйста, тщательно проверьте доставленный Вам товар. Проверьте его на предмет целостности и комплектности. Если с заказом все в порядке и в случае отсутствия претензий от Вас потребуется расписаться в документах курьера (либо менеджеру в пункте выдачи заказов) и оплатить заказ (если он не был оплачен банковской картой на сайте). Ваша подпись в документах будет свидетельствовать о том, что у Вас нет претензий к полученному товару и магазин полностью выполнил свои обязательства.</p>
+                <div class="row align-center">
+                  <div class="col-xl-auto">
+                    <h6>по Москве</h6>
+                  </div>
+                  <div class="col-xl-auto"><img class="lazy" data-src="img/dostavista.png" alt="pay" style="display:block;height:26px;margin-bottom:1rem;"></div>
+                </div>
+                <p>При получении заказа от курьера службы СДЭК или в пункте приема и выдачи заказов СДЭК, пожалуйста, тщательно проверьте доставленный Вам товар. Проверьте его на предмет целостности и комплектности. Если с заказом все в порядке и в случае отсутствия претензий от Вас потребуется расписаться в документах курьера (либо менеджеру в пункте выдачи заказов) и оплатить заказ (если он не был оплачен банковской картой на сайте). Ваша подпись в документах будет свидетельствовать о том, что у Вас нет претензий к полученному товару и магазин полностью выполнил свои обязательства.</p>
+                <h5 class="text-color-a">ОПЛАТА</h5>
+                <h6>100% предоплата</h6>
+                <p>К оплате принимаются все виды платежных карт. Введенная информация не будет предоставлена третьим лицам за исключением случаев, предусмотренных законодательством РФ. Проведение платежей по банковским картам осуществляется в строгом соответствии с требованиями платежных систем МИР, Visa Int. и MasterCard Europe Sprl.</p><img class="lazy" data-src="img/pay.png" alt="pay" style="display:block;width:100%;max-width:450px;padding:0 0 1rem 0;">
+                <p>Выбрав данный способ вы получаете возможность расплачиваться международными платежными системами Visa International и MasterCard World wide. Для выбора оплаты банковской картой при оформлении заказа выберите Способ оплаты «Оплата банковской картой».</p>
+                <p>После оформления на странице заказа нажмите кнопку «Перейти к оплате». Вы будете перенаправлены на платежный шлюз ПАО «Сбербанк России» для ввода реквизитов Вашей карты. Для оплаты (ввода реквизитов Вашей карты) Вы будете перенаправлены на платежный шлюз ПАО СБЕРБАНК. Соединение с платежным шлюзом и передача информации осуществляется в защищенном режиме с использованием протокола шифрования SSL. В случае если Ваш банк поддерживает технологию безопасного проведения интернет-платежей Verified By Visa или MasterCard SecureCode для проведения платежа также может потребоваться ввод специального пароля. Настоящий сайт поддерживает 256-битное шифрование. Конфиденциальность сообщаемой персональной информации обеспечивается ПАО СБЕРБАНК. Введенная информация не будет предоставлена третьим лицам за исключением случаев, предусмотренных законодательством РФ. Проведение платежей по банковским картам осуществляется в строгом соответствии с требованиями платежных систем МИР, Visa Int. и MasterCard Europe Sprl.</p>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
       <footer class="footer">

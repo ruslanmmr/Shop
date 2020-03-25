@@ -1,0 +1,75 @@
+extends layout/layout
+block content
+  include blocks/breadcrumbs
+  main.main
+    .container
+      section.section
+        .section-head.left
+          h1.section__title профиль пользователя
+        .row.compact.mb-10
+          .col-xl-auto.col-12.mb-20
+            a(href="cabinet.html").button.button_style-3.active
+              i.fas.fa-user
+              span Личные данные
+          .col-xl-auto.col-12.mb-20
+            a(href="orders.html").button.button_style-3
+              i.fas.fa-list-ul
+              span История заказов
+        .section__content
+          .profile.row.mb--30
+            //section
+            .profile__bonus.col-xl-12.mb-30 На вашем бонусном счету:  
+              strong 1000 ₽
+                a(href="javascript:void(0);" data-tippy-content='Текст о том, что такое бонусный счет и как накопить много бабла и платить им на сайте')
+                  i.fas.fa-question-circle
+            //section
+            .col-xl-8.col-sm-12.mb-30
+              h5 Контактные данные
+              .row.mb--20
+                .profile-form__item.col-xl-6.col-12.mb-20
+                  input.input.input_style-1(type="text" placeholder="Имя:")
+                .profile-form__item.col-xl-6.col-12.mb-20
+                  input.input.input_style-1(type="text" placeholder="Фамилия:")
+                .profile-form__item.col-xl-6.col-12.mb-20
+                  input.input.input_style-1(type="text" placeholder="Отчество:")
+                .profile-form__item.col-xl-6.col-12.mb-20
+                  input.input.input_style-1.masked(type="text" placeholder="Телефон:").masked
+                .profile-form__item.col-xl-6.col-12.mb-20
+                  input.input.input_style-1.masked(type="text" placeholder="Доп телефон:").masked
+                .profile-form__item.col-xl-6.col-12.mb-20
+                  input.input.input_style-1(type="email" placeholder="Email:")
+            //section
+            .col-xl-4.col-sm-6.col-12.mb-30
+              h5 Смена пароля
+              .profile-form__item.mb-20
+                input(type="password" placeholder="Пароль").input.input_style-1
+                a(href="javascript:void(0);").pass-toggle
+                  i.fas.fa-eye-slash
+                  i.fas.fa-eye
+              .profile-form__item.mb-10
+                input(type="password" placeholder="Пароль еще раз").input.input_style-1
+              span.profile-form__label Пароль должен содержать не менее 6 символов
+            //section
+            .col-xl-12.col-sm-6.col-12.mb-30
+              h5 Уведомления
+              .row.compact
+                .col-xl-auto
+                  label.checkbox
+                    i.fas.fa-check
+                    input(type="checkbox")
+                    | e-mail
+                .col-xl-auto
+                  label.checkbox
+                    i.fas.fa-check
+                    input(type="checkbox")
+                    | sms
+            //section
+            .col-xl-3.col-sm-4.col-12.mb-30
+              a(href="cabinet.html").button.button_style-2
+                span Сохранить
+              
+              
+              
+              //.profile__bonus-b на вашем бонусном счете: 
+                strong 999 ₽ 
+                i.fas.fa-question-circle(data-tippy-content='Текст о том, что такое бонусный счет и как накопить много бабла и платить им на сайте')

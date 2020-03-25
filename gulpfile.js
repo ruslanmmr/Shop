@@ -194,14 +194,14 @@ gulp.task("transfer", function () {
   return gulp.src('./build/**')
     .pipe(rsync({
       root: './build/',
-      hostname: '',
-      destination: '',
+      hostname: 'vh210.timeweb.ru',
+      destination: '/home/c/cq98725/bitrix/public_html/market',
+      username: 'cq98725',
       archive: true,
       silent: false,
       compress: true,
     }));
 });
-
 gulp.task("default", gulp.series("clean",
   gulp.parallel("pug", "styles", "scripts", "images", "favicons", "other"),
   gulp.parallel("watch", "serve")

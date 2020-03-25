@@ -32,12 +32,15 @@
 	},
 	"dependencies": {
 		"@fancyapps/fancybox": "^3.5.7",
+		"autosize": "^4.0.2",
 		"current-device": "^0.10.0",
 		"gsap": "^3.2.4",
+		"inputmask": "^5.0.3",
 		"lazysizes": "^5.2.0",
 		"normalize.css": "^8.0.1",
 		"scroll-lock": "^2.1.2",
 		"slick-carousel": "^1.8.1",
-		"smooth-scrollbar": "^8.5.1"
+		"smooth-scrollbar": "^8.5.1",
+		"tippy.js": "^6.1.0"
 	}
 }

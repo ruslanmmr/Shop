@@ -5,28 +5,34 @@
   padding: 0;
   box-shadow: none;
   background-color: transparent;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   &::placeholder {
     transition: $trs1;
-  }
-  &_style-1 {
-    color: $colorH;
-    border-bottom: 1px solid $colorI;
-    line-height: 34px;
-    border-bottom: 1px solid $colorI;
-    &::placeholder {
-      color: $colorI;
-    }
-    &:-webkit-autofill {
-      -webkit-box-shadow: inset 0 0 0 40px #fff !important;
-      -webkit-text-fill-color: $colorI !important;
-      color: $colorI !important;
-    }
+    color: $colorI;
   }
   &:focus {
     &::placeholder {
       color: transparent;
     }
   }
+  &:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 40px #fff !important;
+    -webkit-text-fill-color: $colorI !important;
+    color: $colorI !important;
+  }
+  &_style-1 {
+    color: $colorH;
+    border-bottom: 1px solid $colorI;
+    line-height: 34px;
+    border-bottom: 1px solid $colorI;
+  }
+}
+textarea.input.input_style-1 {
+  line-height: 20px;
+  padding: 7px 0;
+  height: 35px;
 }
 .search {
   background-color: $colorI;
@@ -58,6 +64,26 @@
     &.hover {
       color: $colorA;
     }
+  }
+}
+.s-item-form {
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+  .input {
+    flex: 1 1 100%;
+    border-radius: 4px 0 0 4px;
+    border-color: $colorA;
+    border-style: solid;
+    border-width: 1px 0 1px 1px;
+    line-height: 33px;
+    padding: 0 15px;
+  }
+  .button {
+    border-radius: 0 4px 4px 0;
+    flex-shrink: 0;
+    width: auto;
   }
 }
 
@@ -107,10 +133,67 @@
     }
   }
   &.disabled {
-    color: $colorI;
+    opacity: 0.8;
+    cursor: default;
+  }
+}
+//radio
+.radio {
+  position: relative;
+  padding: 0 0 0 25px;
+  display: block;
+  cursor: pointer;
+  transition: $trs1;
+  user-select: none;
+  line-height: 20px;
+  &:before {
+    box-sizing: border-box;
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $colorA;
+    background-color: #fff;
+    border-radius: 100%;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    transition: $trs1;
+    z-index: 2;
+  }
+  &:after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 100%;
+    position: absolute;
+    z-index: 3;
+    left: 5px;
+    top: 7px;
+    opacity: 0;
+    transition: $trs1;
+  }
+  input {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.hover,
+  &.touch {
+    opacity: 0.75;
+  }
+  &.mousedown {
+    opacity: 1;
+  }
+  &.checked {
     pointer-events: none;
-    i {
-      border-color: $colorI;
+    &:before {
+      background-color: $colorA;
+    }
+    &:after {
+      opacity: 1;
     }
   }
 }

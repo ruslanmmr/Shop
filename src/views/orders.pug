@@ -1,0 +1,104 @@
+extends layout/layout
+block content
+  include blocks/breadcrumbs
+  main.main
+    .container
+      section.section
+        .section-head.left
+          h1.section__title профиль пользователя
+        .row.compact.mb-10
+          .col-xl-auto.col-12.mb-20
+            a(href="cabinet.html").button.button_style-3
+              i.fas.fa-user
+              span Личные данные
+          .col-xl-auto.col-12.mb-20
+            a(href="orders.html").button.button_style-3.active
+              i.fas.fa-list-ul
+              span История заказов
+        .orders.mb--20
+          .orders__container
+            //item
+            .orders-item.mb-20
+              .orders-item__head
+                .row.space-between.mb--10
+                  span.orders-item__title.col-xl-auto.mb-10 ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018
+                  span.orders-item__date.col-xl-auto.mb-10 Дата обновления заказа: 17.10.2018 [09:14]
+              .orders-item__content
+                .row.mb--20
+                  .col-xl.col-sm-12.mb-20
+                    .orders-item__l-list
+                      ul
+                        li Крем бальзам «Barrakuda» (2шт.) (<strong>1шт.</strong>)
+                        li Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт (<strong>1шт.</strong>)
+                  .col-xl-auto.col-sm-12.mb-20
+                    .orders-item__r-list
+                      ul
+                        li Сумма заказа: <strong>1 450 ₽</strong>
+                        li К оплате: <strong>1 450 ₽</strong>
+                        li 
+                          a(href="#").button.button_style-2 Оплатить
+            //item
+            .orders-item.mb-20
+              .orders-item__head
+                .row.space-between.mb--10
+                  span.orders-item__title.col-xl-auto.mb-10 ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018
+                  span.orders-item__date.col-xl-auto.mb-10 Дата обновления заказа: 17.10.2018 [09:14]
+              .orders-item__content
+                .row.mb--20
+                  .col-xl.col-sm-12.mb-20
+                    .orders-item__l-list
+                      ul
+                        li Крем бальзам «Barrakuda» (2шт.) (<strong>1шт.</strong>)
+                        li Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт (<strong>1шт.</strong>)
+                        li Крем бальзам «Barrakuda» (2шт.) (<strong>1шт.</strong>)
+                        li Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт (<strong>1шт.</strong>)
+                  .col-xl-auto.col-sm-12.mb-20
+                    .orders-item__r-list
+                      ul
+                        li Сумма заказа: <strong>10 450 ₽</strong>
+                        li К оплате: <strong>10 450 ₽</strong>
+                        li 
+                          span.order-label.order-label_style-check Ожидает проверки
+              //item
+            .orders-item.mb-20
+              .orders-item__head
+                .row.space-between.mb--10
+                  span.orders-item__title.col-xl-auto.mb-10 ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018
+                  span.orders-item__date.col-xl-auto.mb-10 Дата обновления заказа: 17.10.2018 [09:14]
+              .orders-item__content
+                .row.mb--20
+                  .col-xl.col-sm-12.mb-20
+                    .orders-item__l-list
+                      ul
+                        li Крем бальзам «Barrakuda» (2шт.) (<strong>1шт.</strong>)
+                        li Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт (<strong>1шт.</strong>)
+                        li Крем бальзам «Barrakuda» (2шт.) (<strong>1шт.</strong>)
+                        li Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт (<strong>1шт.</strong>)
+                  .col-xl-auto.col-sm-12.mb-20
+                    .orders-item__r-list
+                      ul
+                        li Сумма заказа: <strong>10 450 ₽</strong>
+                        li К оплате: <strong>10 450 ₽</strong>
+                        li 
+                          span.order-label.order-label_style-paid Оплачен
+              //item
+            .orders-item.mb-20
+              .orders-item__head
+                .row.space-between.mb--10
+                  span.orders-item__title.col-xl-auto.mb-10 ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018
+                  span.orders-item__date.col-xl-auto.mb-10 Дата обновления заказа: 17.10.2018 [09:14]
+              .orders-item__content
+                .row.mb--20
+                  .col-xl.col-sm-12.mb-20
+                    .orders-item__l-list
+                      ul
+                        li Крем бальзам «Barrakuda» (2шт.) (<strong>1шт.</strong>)
+                        li Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт (<strong>1шт.</strong>)
+                  .col-xl-auto.col-sm-12.mb-20
+                    .orders-item__r-list
+                      ul
+                        li Сумма заказа: <strong>10 450 ₽</strong>
+                        li К оплате: <strong>10 450 ₽</strong>
+                        li 
+                          span.order-label.order-label_style-canceled Отменен
+            

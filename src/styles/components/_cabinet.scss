@@ -1,0 +1,103 @@
+.profile {
+  &__bonus {
+    font-size: 1.125rem;
+    strong {
+      white-space: nowrap;
+      color: $colorH;
+    }
+    a {
+      margin-left: 5px;
+      color: $colorA;
+      transition: $trs2;
+      &.touch,
+      &.hover {
+        color: $colorA2;
+      }
+    }
+  }
+  &-form {
+    &__item {
+      position: relative;
+    }
+    &__label {
+      font-size: 14px;
+      display: block;
+      line-height: 1.25;
+    }
+  }
+}
+
+.orders {
+  &-item {
+    border: 1px solid $colorI;
+    &__head {
+      border-bottom: 1px solid $colorI;
+      padding: 12px 20px;
+      color: $colorI;
+    }
+    &__content {
+      padding: 20px;
+      color: $colorH;
+    }
+    &__l-list {
+      ul {
+        counter-reset: item;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+        &:before {
+          content: counter(item) '. ';
+          counter-increment: item;
+          font-weight: bold;
+        }
+      }
+      
+    }
+    &__r-list {
+      white-space: nowrap;
+      min-width: 200px;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.order-label {
+  line-height: 25px;
+  padding: 0 10px;
+  display: inline-block;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  &_style-paid {
+    background-color: rgb(86, 190, 0);
+  }
+  &_style-canceled {
+    background-color: $colorH;
+  }
+  &_style-check {
+    background-color: $colorA;
+  }
+}
+
+@media all and(max-width: 1024px) {
+  
+}
+
+@media all and(max-width: 576px) {
+  
+}
