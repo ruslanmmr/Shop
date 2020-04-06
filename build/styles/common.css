@@ -5544,6 +5544,33 @@ ol.list {
     .link_bordered.touch, .link_bordered.hover {
       text-decoration: none; }
 
+.message {
+  border-radius: 4px;
+  padding: 13px 20px;
+  display: flex; }
+  .message i {
+    line-height: 24px; }
+    .message i:first-child {
+      margin-right: 15px; }
+    .message i:last-child {
+      margin-right: 15px; }
+  .message span {
+    line-height: 24px; }
+  .message_alert {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba; }
+  .message_succes {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb; }
+  .message_fixed {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+    max-width: calc(100% - 40px); }
+
 .input {
   display: block;
   width: 100%;
