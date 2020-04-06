@@ -61,3 +61,21 @@
     a(href="#auth" data-fancybox data-touch='false').link
       | Войти
   
+.popup.message-popup#cart
+  h5.message-popup__title.t-size-24.mb-20
+    i.fas.fa-check
+    | Товар добавлен в корзину
+  .mb-20
+    .row.compact.align-center
+      .col-xl-auto
+        a(href="#").message-popup__image.cover
+          img(data-src="img/image2.jpg" alt="img").lazy
+      .col-xl
+        a(href="#").message-popup__item-title.link.link_style2 Заголовок
+        span.message-popup__item-code Код товара  
+          strong 559658
+  .row.compact
+    .col-xl-auto
+      a(href="javascript:void(0);" data-fancybox-close).button.button_style-3 Продолжить покупки
+    .col-xl-auto
+      a(href="cart.html").button.button_style-2 Перейти в корзину

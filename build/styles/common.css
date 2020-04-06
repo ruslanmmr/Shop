@@ -6907,6 +6907,27 @@ body.compensate-for-scrollbar {
     border-bottom: 1px solid #888a90;
     padding-bottom: 7px; }
 
+.message-popup {
+  max-width: 100%;
+  width: auto;
+  padding: 40px 20px 20px 20px; }
+  .message-popup__title i {
+    color: #ff8900;
+    margin-right: 15px; }
+  .message-popup__item-title {
+    font-size: 1.125rem; }
+  .message-popup__item-code {
+    display: block; }
+  .message-popup__image {
+    width: 100px;
+    transition: 0.25s ease-in-out; }
+    .message-popup__image:before {
+      content: '';
+      display: block;
+      padding-top: 68%; }
+    .message-popup__image.touch, .message-popup__image.hover {
+      opacity: 0.7; }
+
 .pass-toggle {
   width: 34px;
   height: 34px;

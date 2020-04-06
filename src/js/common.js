@@ -105,6 +105,7 @@ function modals() {
   $.fancybox.defaults.loop = true;
   $.fancybox.defaults.autoFocus = false;
   $.fancybox.defaults.animationEffect = 'fade';
+  $.fancybox.defaults.touch = false;
   $.fancybox.defaults.backFocus = 'false';
   $.fancybox.defaults.animationDuration = 500;
 
@@ -139,6 +140,10 @@ function modals() {
   });
   
 }
+
+
+
+
 //password toggle
 function passToggle() {
   let $button = $('.pass-toggle');
@@ -596,3 +601,6 @@ let catalogue = {
     catalogue.$navTrigger.removeClass('active');
   }
 }
+
+
+// $.fancybox.open([{src:'#cart'}]);
