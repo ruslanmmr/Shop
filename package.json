@@ -36,7 +36,7 @@
 		"current-device": "^0.10.0",
 		"gsap": "^3.2.4",
 		"inputmask": "^5.0.3",
-		"lazysizes": "^5.2.0",
+		"lazysizes": "^5.2.1",
 		"normalize.css": "^8.0.1",
 		"scroll-lock": "^2.1.2",
 		"slick-carousel": "^1.8.1",
